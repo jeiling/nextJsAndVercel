@@ -26,7 +26,7 @@ const YearSelection = ({
             key={year}
             onClick={() => handleYearClick(year)}
             className={`p-2 rounded-sm w-15 h-6 flex items-center justify-center group ${
-              year === tempYear ? "bg-[#00A3FF] text-white" : "text-white"
+              year === tempYear ? "bg-blue50 text-white" : "text-white"
             } hover:bg-white hover:text-black transition duration-150`}
           >
             {year}

@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect, useRef } from "react";
 import {
   format,
@@ -156,7 +157,7 @@ const Calendar: React.FC = () => {
         {showCalendar && (
           <div
             ref={calendarRef}
-            className="absolute bg-[#181818] px-6 py-4 rounded-[10px] w-full z-10 mt-1 w-80"
+            className="absolute bg-gray300 px-6 py-4 rounded-[10px] w-full z-10 mt-1 w-80"
           >
             <CalendarTitle startOfMonth={startOfMonth} />
             <MonthAndYearSelection
@@ -176,7 +177,7 @@ const Calendar: React.FC = () => {
               <>
                 <div className="grid grid-cols-7 text-center">
                   {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-                    <div key={day} className="text-xs text-[#929292] mb-[13px]">
+                    <div key={day} className="text-xs text-gray200 mb-[13px]">
                       {day}
                     </div>
                   ))}
@@ -195,15 +196,15 @@ const Calendar: React.FC = () => {
                             isSameDay(selectedDate, new Date())) ||
                           (isSameDay(tempSelectedDate, initDate) &&
                             isSameDay(selectedDate, day))
-                            ? "bg-[#00A3FF] text-white"
+                            ? "bg-blue50 text-white"
                             : tempSelectedDate !== initDate &&
                               isSameDay(day, selectedDate)
                             ? "border border-[#00A3FF] bg-transparent"
                             : isSameDay(day, tempSelectedDate) &&
                               tempSelectedDate !== initDate
-                            ? "bg-[#00A3FF] text-white"
+                            ? "bg-blue50 text-white"
                             : isSameDay(day, selectedDate)
-                            ? "bg-[#00A3FF] text-white"
+                            ? "bg-blue50 text-white"
                             : hoveredDate && isSameDay(day, hoveredDate)
                             ? "bg-white text-black"
                             : ""

@@ -5,9 +5,9 @@ import { ValidationItemProps } from "../types";
 const ValidationItem = ({ isValid, text }: ValidationItemProps) => (
   <li className="flex items-center text-white text-sm h-10">
     {isValid ? (
-      <CheckCircleIcon className="w-6 h-6 text-[#00D1FF] mr-[10px]" />
+      <CheckCircleIcon className="w-6 h-6 text-blue100 mr-[10px]" />
     ) : (
-      <CheckCircleOutlineOutlinedIcon className="w-6 h-6 text-[#565656] mr-[10px]" />
+      <CheckCircleOutlineOutlinedIcon className="w-6 h-6 text-gray50 mr-[10px]" />
     )}
     {text}
   </li>
