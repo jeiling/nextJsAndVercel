@@ -3,7 +3,7 @@ import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutli
 import { ValidationItemProps } from "../types";
 
 const ValidationItem = ({ isValid, text }: ValidationItemProps) => (
-  <li className="flex items-center text-white text-sm h-10">
+  <li className="flex items-center !text-white text-sm h-10">
     {isValid ? (
       <CheckCircleIcon className="w-6 h-6 text-blue100 mr-[10px]" />
     ) : (

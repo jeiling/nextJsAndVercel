@@ -66,7 +66,7 @@ const PasswordInput: React.FC = () => {
         }}
       />
       {password && (
-        <Card className="absolute top-full left-0 mt-2 shadow-md bg-gray100 w-[335px] px-[12px] py-[8px] rounded-lg">
+        <Card className="absolute top-full left-0 mt-2 shadow-md !bg-gray100 w-[335px] px-[12px] py-[8px] rounded-lg">
           <CardContent className="p-0 last:pb-0">
             <ul className="list-none p-0">
               {[
