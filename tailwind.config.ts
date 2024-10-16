@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
@@ -16,8 +17,6 @@ const config: Config = {
         gray100:'#242424',
         gray200:'#929292',
         gray300:'#181818',
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
     },
   },
