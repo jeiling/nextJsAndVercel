@@ -43,7 +43,7 @@ const PasswordInput: React.FC = () => {
         variant="outlined"
         className="w-[335px] mb-4"
         InputLabelProps={{
-          className: "text-white",
+          className: "!text-white",
           shrink: true,
           sx: {
             [`&.${inputLabelClasses.shrink}`]: {
@@ -52,7 +52,7 @@ const PasswordInput: React.FC = () => {
           },
         }}
         InputProps={{
-          className: "text-white rounded-lg .placeholder-gray-200",
+          className: "!text-white rounded-lg .placeholder-gray-200",
         }}
         sx={{
           "& .MuiOutlinedInput-root": {
