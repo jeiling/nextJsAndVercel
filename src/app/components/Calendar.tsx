@@ -157,7 +157,7 @@ const Calendar: React.FC = () => {
         {showCalendar && (
           <div
             ref={calendarRef}
-            className="absolute bg-gray300 px-6 py-4 rounded-[10px] w-full z-10 mt-1 w-80"
+            className="absolute bg-gray300 px-6 py-4 rounded-[10px] w-full z-10 mt-1"
           >
             <CalendarTitle startOfMonth={startOfMonth} />
             <MonthAndYearSelection
