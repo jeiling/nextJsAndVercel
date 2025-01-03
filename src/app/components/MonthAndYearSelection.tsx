@@ -11,7 +11,7 @@ const MonthAndYearSelection = ({
     <div className="flex justify-between items-center mb-2 mt-4 h-12">
       <button
         onClick={() => onChange(isYearSelection ? "year" : "month", "prev")}
-        className="text-white w-6 h-6"
+        className="text-white text-2xl flex items-center justify-center"
       >
         &lt;
       </button>
@@ -24,9 +24,10 @@ const MonthAndYearSelection = ({
           ? format(startOfMonth, "yyyy")
           : format(startOfMonth, "MMMM yyyy")}
       </div>
+      
       <button
         onClick={() => onChange(isYearSelection ? "year" : "month", "next")}
-        className="text-white"
+        className="text-white text-2xl flex items-center justify-center"
       >
         &gt;
       </button>
