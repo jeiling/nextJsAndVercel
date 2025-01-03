@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
@@ -6,6 +6,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import ValidationItem from "./ValidationItem";
 import { inputLabelClasses } from "@mui/material/InputLabel";
+
+const isLongEnoughLength = 9;
 
 const PasswordInput: React.FC = () => {
   const [password, setPassword] = useState<string>("");
@@ -16,15 +18,19 @@ const PasswordInput: React.FC = () => {
     hasSpecialChar: false,
     isLongEnough: false,
   });
+  const [allValid, setAllValid] = useState(false);
 
   const validatePassword = (password: string) => {
-    setValidations({
+    const newValidations = {
       hasUpperCase: /[A-Z]/.test(password),
       hasLowerCase: /[a-z]/.test(password),
       hasNumber: /\d/.test(password),
-      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(password),
-      isLongEnough: password.length > 8,
-    });
+      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>\+\-=]/.test(password),
+      isLongEnough: password.length >= isLongEnoughLength,
+    };
+
+    setValidations(newValidations);
+    setAllValid(Object.values(newValidations).every((value) => value));
   };
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,8 +76,8 @@ const PasswordInput: React.FC = () => {
           },
         }}
       />
-      {password && (
-        <Card className="absolute top-full left-0 mt-1 shadow-md bg-gray100 w-[335px] px-[12px] py-[8px] rounded-lg">
+      {password && !allValid && (
+        <Card className="absolute top-full left-0 mt-1 shadow-md bg-gray100 w-[335px] px-[12px] py-[8px] rounded-lg z-10">
           <CardContent className="p-0 last:pb-0">
             <ul className="list-none p-0">
               {[
@@ -93,7 +99,7 @@ const PasswordInput: React.FC = () => {
                 },
                 {
                   isValid: validations.isLongEnough,
-                  text: "Longer than 8 characters",
+                  text: `Longer than ${isLongEnoughLength} characters`,
                 },
               ].map((validation, index) => (
                 <ValidationItem
