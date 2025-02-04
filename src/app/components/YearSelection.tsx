@@ -25,7 +25,7 @@ const YearSelection = ({
           <button
             key={year}
             onClick={() => handleYearClick(year)}
-            className={`p-2 rounded-sm w-15 h-6 flex items-center justify-center group ${
+            className={`p-2 rounded-sm w-15 h-6 flex items-center justify-center group text-sm md:text-base ${
               year === tempYear ? "bg-blue50 text-white" : "text-white"
             } hover:bg-white hover:text-black transition duration-150`}
           >
@@ -36,13 +36,13 @@ const YearSelection = ({
       <div className="flex mt-4 justify-end">
         <button
           onClick={onCancel}
-          className="text-white text-sm w-20 capitalize"
+          className="text-white text-sm md:text-base w-20 capitalize"
         >
           Cancel
         </button>
         <button
           onClick={handleOk}
-          className="text-white text-sm w-14 capitalize"
+          className="text-white text-sm md:text-base w-14 capitalize"
         >
           OK
         </button>
